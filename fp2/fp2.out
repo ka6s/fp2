@@ -1,0 +1,12 @@
+Reference,Quantity,Identifier,Package,Value,Tolerance,Voltage,Current,Power,PN
+"H2;H3;H4;H5;H6;H7;H8;H1;H10;H11;H12;H13;H14;H15;H16;H9","16","","","MountingHole_Pad","","","","",""
+"J2","1","","","Conn_02x20_Odd_Even","","","","",""
+"ENC3;ENC2;ENC4;ENC5","4","","","Dual_Rotary_Encoder_Switch","","","","",""
+"RN1;RN3;RN2;RN5;RN4","5","","","10K","","","","",""
+"U1","1","","","MCP23017_SO","","","","",""
+"C3","1","","","10uF","","","","",""
+"C2","1","","","0.01uF","","","","",""
+"SW9;SW8;SW7;SW6;SW5;SW4;SW3;SW2;SW17;SW16;SW15;SW14;SW13;SW12;SW11;SW10","16","","","SW_SPST","","","","",""
+"J1","1","","","Barrel_Jack_MountingPin","","","","",""
+"J3","1","","","Conn_01x05_Male","","","","",""
+"C1","1","","","220uF","","","","",""

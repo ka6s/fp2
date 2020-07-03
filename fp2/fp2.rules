@@ -1,0 +1,98 @@
+
+(rules PCB fp2
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 8911)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.2)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.5)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-/encoder/5V" "Via[0-1]_800:400_um" /encoder/5V
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    /encoder/5V "Via[0-1]_800:400_um-/encoder/5V"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    GND "Net-(C2-Pad1)" /encoder/3V3 /encoder/GPIO5 /encoder/GPIO6 /encoder/GPIO22 /encoder/GPIO20 /encoder/GPIO26
+    /encoder/GPIO21 /encoder/GPIO4 /encoder/GPIO27 /encoder/GPIO7 /encoder/GPIO9 /encoder/GPIO19 /encoder/GPIO16 /encoder/GPIO23
+    /encoder/GPIO10 /encoder/GPIO11 /encoder/GPIO13 /encoder/GPIO12 /encoder/GPIO24 /encoder/GPIO25 /encoder/GPIO8 /encoder/GPIO14
+    /encoder/GPIO15 /encoder/GPIO17 /encoder/GPIO18 /encoder/GPB7 /encoder/GPB6 /encoder/GPB5 /encoder/GPB4 /encoder/GPB3
+    /encoder/GPB2 /encoder/GPB1 /encoder/GBP0 /encoder/GPA0 /encoder/GPA1 /encoder/GPA2 /encoder/GPA3 /encoder/GPA4
+    /encoder/GPA5 /encoder/GPA6' /encoder/GPA7 /encoder/GPA6 /encoder/GPB0 "Net-(ENC1-Pad3)" "/encoder/I2C_SDA" "/encoder/I2C_SCL"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class /encoder/5V
+    /encoder/5V
+    (clearance_class /encoder/5V)
+    (via_rule /encoder/5V)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
